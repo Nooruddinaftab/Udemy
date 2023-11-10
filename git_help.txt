@@ -5,5 +5,10 @@ git remote add origin "https://github.com/Nooruddinaftab/Udemy.git"
 
 git push -u origin master
 
-git commit -m "latest 23"
+// add files
+
+git add .
+git commit -m "comment as per needed"
+
+
 
