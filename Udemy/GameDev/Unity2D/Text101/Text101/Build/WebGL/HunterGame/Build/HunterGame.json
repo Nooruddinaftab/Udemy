@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Text101",
+"dataUrl": "HunterGame.data.unityweb",
+"asmCodeUrl": "HunterGame.asm.code.unityweb",
+"asmMemoryUrl": "HunterGame.asm.memory.unityweb",
+"asmFrameworkUrl": "HunterGame.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
