@@ -9,11 +9,13 @@ public class GameSession : MonoBehaviour {
 	// Config Params
 	[Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
 	[SerializeField] int pointsPerBlockDestroyed = 80;
+	[SerializeField] bool isAutoPlayEnabled;
 	// state variables
 	[SerializeField] int currentScore = 0;
 
-	
+
 	[SerializeField]  TextMeshProUGUI scoreText;
+
 	private void Awake()
     {
 		int gameStatusCount = FindObjectsOfType<GameSession>().Length;
@@ -53,4 +55,9 @@ public class GameSession : MonoBehaviour {
 	void Update () {
 		Time.timeScale = gameSpeed;
 	}
+
+	public bool IsAutoPlayEnabled()
+    {
+		return isAutoPlayEnabled;
+    }
 }

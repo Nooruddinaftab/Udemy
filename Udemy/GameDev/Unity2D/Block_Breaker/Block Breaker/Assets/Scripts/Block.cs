@@ -7,7 +7,6 @@ public class Block : MonoBehaviour {
     // config params
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockParticleEffect;
-    [SerializeField] int maxHits;
     [SerializeField] Sprite[] hitSprites;
 
     // cached reference
@@ -17,9 +16,12 @@ public class Block : MonoBehaviour {
     // state variables
     [SerializeField] int timesHit; // only for debugging
 
+    int maxHits;
 
     private void Start()
     {
+        maxHits = hitSprites.Length + 1;
+
         level = FindObjectOfType<Level>();
         gameSession = FindObjectOfType<GameSession>();
         if (gameObject.tag == "Breakable")
@@ -31,9 +33,7 @@ public class Block : MonoBehaviour {
         if(gameObject.tag == "Breakable")
         {
             HandleHit();
-           
         }
-
         // Debug.Log(collision.gameObject.name);
     }
     private void HandleHit()
@@ -51,7 +51,14 @@ public class Block : MonoBehaviour {
     private void ShowNextHitSprite()
     {
         int spriteIndex = timesHit - 1;
-        GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        if (hitSprites[spriteIndex] != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        }
+        else
+        {
+            Debug.LogError("Block sprite is missing "+gameObject.name);
+        }
     }
     private void DestroyBlock()
     {

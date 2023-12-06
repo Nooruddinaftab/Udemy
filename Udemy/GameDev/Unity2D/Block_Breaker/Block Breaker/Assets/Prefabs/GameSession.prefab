@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSpeed: 1
   pointsPerBlockDestroyed: 80
+  isAutoPlayEnabled: 0
   currentScore: 0
   scoreText: {fileID: 114547805203408174}
 --- !u!114 &114484087536847942
