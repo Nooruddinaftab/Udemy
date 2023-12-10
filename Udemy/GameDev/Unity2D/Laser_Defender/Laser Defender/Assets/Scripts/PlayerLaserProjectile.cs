@@ -6,6 +6,9 @@ public class PlayerLaserProjectile : MonoBehaviour
 {
     [SerializeField] Sprite projectileHitSprite;
 
-
+    public void SetProjectileSprite()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = projectileHitSprite;
+    }
 
 }

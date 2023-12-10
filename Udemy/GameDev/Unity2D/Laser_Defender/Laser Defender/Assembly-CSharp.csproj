@@ -64,10 +64,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DamageDealer.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyOneLaserProjectile.cs" />
     <Compile Include="Assets\Scripts\EnemyPathing.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\EnemyTwoLaserProjectile.cs" />
     <Compile Include="Assets\Scripts\LaserShredder.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerLaserProjectile.cs" />
+    <Compile Include="Assets\Scripts\WaveConfig.cs" />
     <None Include="Assets\Space Shooter Visual Assets\Spritesheet\sheet.xml" />
     <None Include="Assets\Space Shooter Visual Assets\license.txt" />
     <Reference Include="Unity.Timeline.Editor">

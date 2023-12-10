@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7108442809901860889}
   - component: {fileID: -5108282324813886177}
   - component: {fileID: -6717842423831735170}
-  m_Layer: 0
+  - component: {fileID: 4170193940409317882}
+  - component: {fileID: 71811777517839947}
+  m_Layer: 10
   m_Name: PlayerLaserProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,3 +122,30 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.13, y: 0.57}
   m_Direction: 0
+--- !u!114 &4170193940409317882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108442809901860891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bf318d44571d84280f390271f3925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+--- !u!114 &71811777517839947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108442809901860891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d5199598f57a0408fc4e164199b226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileHitSprite: {fileID: 21300000, guid: 5c6d175a309ae8241bad720dda6a55c9,
+    type: 3}
