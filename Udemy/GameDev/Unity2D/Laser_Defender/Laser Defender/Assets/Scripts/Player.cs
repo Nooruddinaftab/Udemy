@@ -98,6 +98,13 @@ public class Player : MonoBehaviour
         var newXPos = Mathf.Clamp(transform.position.x + (deltaX * Time.deltaTime * moveSpeed), xMin, xMax);
         var newYPos = Mathf.Clamp(transform.position.y + (deltaY * Time.deltaTime * moveSpeed), yMin, yMax);
         transform.position = new Vector2(newXPos, newYPos);
+
+        // for tilt
+        deltaX = Input.acceleration.x;
+        deltaY = Input.acceleration.y;
+        newXPos = Mathf.Clamp(transform.position.x + (deltaX * Time.deltaTime * moveSpeed), xMin, xMax);
+        newYPos = Mathf.Clamp(transform.position.y + (deltaY * Time.deltaTime * moveSpeed), yMin, yMax);
+        transform.position = new Vector2(newXPos, newYPos);
     }
     private void SetupMoveBoundaries()
     {
