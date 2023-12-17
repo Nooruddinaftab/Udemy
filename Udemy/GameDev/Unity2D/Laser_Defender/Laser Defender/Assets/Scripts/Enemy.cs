@@ -11,7 +11,14 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float durationOfExplosionVFX = 1f;
 
+    [Header("Player Sounds")]
+    [SerializeField] AudioClip deathSFX;
+    [SerializeField] [Range(0,1)] float deathSoundVolume = 0.7f;
+    [SerializeField] AudioClip shootSFX;
+    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +28,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DestroyEnemy();
         CountdownAndShoot();
     }
     private void CountdownAndShoot()
@@ -36,6 +42,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSoundVolume);
 
         ResetShotCounter();
     }
@@ -43,18 +50,28 @@ public class Enemy : MonoBehaviour
     {
         shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
+    private void ProcessHit(DamageDealer damageDealer)
+    {
+        health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (health <= 0)
+        {
+            DestroyEnemy();
+        }
+    }
     private void DestroyEnemy()
     {
-        if (health <= 0)
-            Destroy(gameObject);
+        Destroy(gameObject);
+        GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(explosion, durationOfExplosionVFX);
+        AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<DamageDealer>())
         {
             DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-            health -= damageDealer.GetDamage();
-            damageDealer.Hit();
+            ProcessHit(damageDealer);
         }
     }
 }
