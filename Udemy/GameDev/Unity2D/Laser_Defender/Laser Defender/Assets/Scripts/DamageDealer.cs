@@ -15,4 +15,14 @@ public class DamageDealer : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    public void Hit(Player player)
+    {
+        if (player.GetHealth() <= 0)
+            player.DestroyPlayer();
+    }
+    public void Hit(Enemy enemy)
+    {
+        if (enemy.GetHealth() <= 0)
+            enemy.DestroyEnemy();
+    }
 }

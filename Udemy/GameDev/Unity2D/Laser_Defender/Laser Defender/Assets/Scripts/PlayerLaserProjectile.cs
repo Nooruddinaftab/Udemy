@@ -10,5 +10,8 @@ public class PlayerLaserProjectile : MonoBehaviour
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = projectileHitSprite;
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 }

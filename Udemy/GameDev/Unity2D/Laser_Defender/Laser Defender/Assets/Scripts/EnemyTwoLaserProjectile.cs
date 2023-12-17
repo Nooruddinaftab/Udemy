@@ -5,5 +5,8 @@ using UnityEngine;
 public class EnemyTwoLaserProjectile : MonoBehaviour
 {
     [SerializeField] Sprite projectileHitSprite;
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 }

@@ -53,13 +53,17 @@ public class Enemy : MonoBehaviour
     private void ProcessHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
-        damageDealer.Hit();
+        damageDealer.Hit(this);
         if (health <= 0)
         {
             DestroyEnemy();
         }
     }
-    private void DestroyEnemy()
+    public float GetHealth()
+    {
+        return health;
+    }
+    public void DestroyEnemy()
     {
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);

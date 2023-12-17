@@ -43,14 +43,18 @@ public class Player : MonoBehaviour
         Fire();
         DestroyPlayer();
     }
-    private void DestroyPlayer()
+    public void DestroyPlayer()
     {
         if (health <= 0)
             Die();
     }
-
+    public float GetHealth()
+    {
+        return health;
+    }
     private void Die()
     {
+        FindObjectOfType<Level>().LoadGameOverScene();
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSoundVolume);
     }
@@ -60,7 +64,7 @@ public class Player : MonoBehaviour
         {
             DamageDealer damageDealer = other.GetComponent<DamageDealer>();
             health -= damageDealer.GetDamage();
-            damageDealer.Hit();
+            damageDealer.Hit(this);
         }
     }
     private void Fire()
