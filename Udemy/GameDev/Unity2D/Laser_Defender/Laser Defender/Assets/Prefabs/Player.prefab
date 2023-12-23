@@ -102,6 +102,9 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 20
   projectileFiringPeriod: 0.08
+  deathVFX: {fileID: 1411408348732499078, guid: 69823bf074e36aa4b99a10fa22335c10,
+    type: 3}
+  durationOfExplosionVFX: 1
   health: 1000
   deathSFX: {fileID: 8300000, guid: 22e778cfb3505c74fb1497c6bd72a559, type: 3}
   deathSoundVolume: 1
