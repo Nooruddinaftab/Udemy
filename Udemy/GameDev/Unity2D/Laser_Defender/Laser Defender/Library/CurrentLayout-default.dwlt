@@ -238,8 +238,8 @@ MonoBehaviour:
     y: 0
     width: 520
     height: 660
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -291,8 +291,8 @@ MonoBehaviour:
     y: 0
     width: 579
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -416,23 +416,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1a370000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 668cffffae8cffffc28cffff268dffff2a8dffff908dfffff68dffff0a8effff6e8effff728effffd88effff8c8fffffa08fffff0490ffff0890ffff6e90ffff4891ffff5c91ffff6292ffff6692ffffd092ffffc093ffffd493ffffda94ffffde94ffff4895ffff489bffff1ad3ffff2ed3ffff34d4ffff9ad4ffffa6d4ffff6efbffff
+      m_ExpandedIDs: 6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: LaserShredder_bottom
-        m_OriginalName: LaserShredder_bottom
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -25788
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000d02c00001e2c0000ec3c0000f03e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
