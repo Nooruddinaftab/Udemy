@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] float durationOfExplosionVFX = 1f;
 
     [SerializeField] float health = 1000;
+    [SerializeField] bool autoFire = true;
 
     [Header("Player Sounds")]
     [SerializeField] AudioClip deathSFX;
@@ -27,7 +28,8 @@ public class Player : MonoBehaviour
 
     Coroutine firingCoroutine;
     bool coroutineStarted = false;
-
+    GameSession gameSession;
+    
     private float xMin;
     private float xMax;
     private float yMin;
@@ -37,8 +39,23 @@ public class Player : MonoBehaviour
     void Start()
     {
         SetupMoveBoundaries();
+        gameSession = FindObjectOfType<GameSession>();
+        UpdatePlayerHealthInGameSession();
+        if(autoFire)
+        {
+            FireAtStart();
+        }
     }
 
+    private void FireAtStart()
+    {
+        firingCoroutine = StartCoroutine(FireContinuosly());
+        coroutineStarted = true;
+    }
+    private void UpdatePlayerHealthInGameSession()
+    {
+        gameSession.SetHealth((int)health);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -69,20 +86,26 @@ public class Player : MonoBehaviour
         {
             DamageDealer damageDealer = other.GetComponent<DamageDealer>();
             health -= damageDealer.GetDamage();
+            // health cannot be negative
+            if (health < 0) { health = 0; }
             damageDealer.Hit(this);
+            UpdatePlayerHealthInGameSession();
         }
     }
     private void Fire()
     {
-        if (Input.GetButtonDown("Fire1") && !coroutineStarted)
+        if(!autoFire)
         {
-            firingCoroutine = StartCoroutine(FireContinuosly());
-            coroutineStarted = true;
-        }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            StopCoroutine(firingCoroutine);
-            coroutineStarted = false;
+            if (Input.GetButtonDown("Fire1") && !coroutineStarted)
+            {
+                firingCoroutine = StartCoroutine(FireContinuosly());
+                coroutineStarted = true;
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                StopCoroutine(firingCoroutine);
+                coroutineStarted = false;
+            }
         }
     }
     IEnumerator FireContinuosly()

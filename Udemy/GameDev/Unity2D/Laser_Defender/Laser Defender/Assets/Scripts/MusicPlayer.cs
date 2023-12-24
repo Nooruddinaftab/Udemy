@@ -19,8 +19,5 @@ public class MusicPlayer : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    private void Update()
-    {
-        
-    }
+
 }

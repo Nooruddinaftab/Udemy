@@ -58,10 +58,6 @@ public class Enemy : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit(this);
-        if (health <= 0)
-        {
-           // DestroyEnemy();
-        }
     }
     public float GetHealth()
     {

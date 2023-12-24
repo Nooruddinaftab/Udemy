@@ -7,6 +7,7 @@ public class GameSession : MonoBehaviour
 {
 
     int score = 0;
+    int health = 0;
 
     private void Awake()
     {
@@ -31,6 +32,14 @@ public class GameSession : MonoBehaviour
         return score;
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+    public void SetHealth(int health)
+    {
+        this.health = health;
+    }
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;

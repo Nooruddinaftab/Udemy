@@ -13,6 +13,7 @@ public class DamageDealer : MonoBehaviour
 
     public void Hit()
     {
+        // for projectiles
         Destroy(gameObject);
     }
     public void Hit(Player player)

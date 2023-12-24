@@ -284,11 +284,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8791185336439566912, guid: a1fc8ac3b492d304d9a92527cd7a5326,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 37.610123
-      objectReference: {fileID: 0}
     - target: {fileID: 8791185336439566913, guid: a1fc8ac3b492d304d9a92527cd7a5326,
         type: 3}
       propertyPath: m_Name
@@ -371,6 +366,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c7ff369294f8046be01ce5eea67df2, type: 3}
+--- !u!1 &1708068341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626228001, guid: 7ea2e74185f4a8945aba0f7df55cfb77,
+    type: 3}
+  m_PrefabInstance: {fileID: 3144305766661358639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1708068345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708068341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecfc6b1102abacd459ae0734fe85c74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &105964964937715176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,6 +521,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 557710637632961487, guid: fb8a7a7bfe0f24144aa8df6326b98280,
+        type: 3}
+      propertyPath: waveConfigList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 557710637632961487, guid: fb8a7a7bfe0f24144aa8df6326b98280,
+        type: 3}
+      propertyPath: waveConfigList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 804f7d112acd5be44971fad96efbe410,
+        type: 2}
+    - target: {fileID: 557710637632961487, guid: fb8a7a7bfe0f24144aa8df6326b98280,
+        type: 3}
+      propertyPath: waveConfigList.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2dd47628c9e065c4d8222d4d2fe15107,
+        type: 2}
     - target: {fileID: 557710637632961489, guid: fb8a7a7bfe0f24144aa8df6326b98280,
         type: 3}
       propertyPath: m_Name
@@ -1121,11 +1151,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8791185336439566912, guid: a1fc8ac3b492d304d9a92527cd7a5326,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 40.72806
       objectReference: {fileID: 0}
     - target: {fileID: 8791185336439566913, guid: a1fc8ac3b492d304d9a92527cd7a5326,
         type: 3}

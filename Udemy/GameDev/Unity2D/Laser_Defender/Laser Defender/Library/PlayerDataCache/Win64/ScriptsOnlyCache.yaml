@@ -3,15 +3,18 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BackgroundScroller
     - DamageDealer
+    - DisplayHealth
     - Enemy
     - EnemyOneLaserProjectile
     - EnemyPathing
     - EnemySpawner
     - EnemyTwoLaserProjectile
+    - GameSession
     - LaserShredder
     - Level
     - Player
     - PlayerLaserProjectile
+    - ScoreDisplay
     - WaveConfig
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -37,6 +40,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -78,6 +82,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11282}
     - Class: 114
+      Script: {instanceID: 11344}
+    - Class: 114
       Script: {instanceID: 11772}
     - Class: 114
       Script: {instanceID: 11800}
@@ -94,18 +100,26 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12306}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 12480}
     - Class: 114
-      Script: {instanceID: 12686}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12688}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 12882}
     - Class: 114
-      Script: {instanceID: 13120}
+      Script: {instanceID: 12892}
+    - Class: 114
+      Script: {instanceID: 13052}
+    - Class: 114
+      Script: {instanceID: 13124}
+    - Class: 114
+      Script: {instanceID: 16024}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -118,6 +132,8 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
       Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
@@ -153,6 +169,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
+      Script: {instanceID: 11344}
+    - Class: 114
       Script: {instanceID: 11800}
     - Class: 114
       Script: {instanceID: 11918}
@@ -161,14 +179,18 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12452}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 12480}
     - Class: 114
-      Script: {instanceID: 12664}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12666}
     - Class: 114
-      Script: {instanceID: 13120}
+      Script: {instanceID: 12734}
+    - Class: 114
+      Script: {instanceID: 13124}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -230,15 +252,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12466}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 12664}
+      Script: {instanceID: 12666}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 12904}
+      Script: {instanceID: 12908}
     - Class: 114
-      Script: {instanceID: 13120}
+      Script: {instanceID: 13124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -524,7 +546,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 24cbf67fa59a9c26f39a4eb3cbf5e6cf
+      Hash: 2cd32852dab0238fa4ad94c75037cea4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -590,6 +612,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreDisplay
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -608,7 +636,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: a2b50cd1bc073af77a34f63dc86a35bc
+      Hash: 72e60cb36e2305cdc1ad42f25e98c80b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -648,6 +676,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSession
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -756,6 +790,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DisplayHealth
   platform: 19
   scenePathNames:
   - Assets/Scenes/StartMenu.unity
