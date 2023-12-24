@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverMusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 540624802473795661, guid: 8726c6002868e7449a5516516cfbd5bd,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.721
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8726c6002868e7449a5516516cfbd5bd, type: 3}
 --- !u!1001 &563258395

@@ -34,10 +34,14 @@ public class Player : MonoBehaviour
     private float xMax;
     private float yMin;
     private float yMax;
-   
+
+    private Touch touch;
+    private float touchSpeedModifier;
+
     // Start is called before the first frame update
     void Start()
     {
+        touchSpeedModifier = 0.5f;
         SetupMoveBoundaries();
         gameSession = FindObjectOfType<GameSession>();
         UpdatePlayerHealthInGameSession();
@@ -128,11 +132,24 @@ public class Player : MonoBehaviour
         transform.position = new Vector2(newXPos, newYPos);
 
         // for tilt
-        deltaX = Input.acceleration.x;
-        deltaY = Input.acceleration.y;
-        newXPos = Mathf.Clamp(transform.position.x + (deltaX * Time.deltaTime * moveSpeed), xMin, xMax);
-        newYPos = Mathf.Clamp(transform.position.y + (deltaY * Time.deltaTime * moveSpeed), yMin, yMax);
-        transform.position = new Vector2(newXPos, newYPos);
+       // deltaX = Input.acceleration.x;
+        //deltaY = Input.acceleration.y;
+       // newXPos = Mathf.Clamp(transform.position.x + (deltaX * Time.deltaTime * moveSpeed), xMin, xMax);
+       // newYPos = Mathf.Clamp(transform.position.y + (deltaY * Time.deltaTime * moveSpeed), yMin, yMax);
+       // transform.position = new Vector2(newXPos, newYPos);
+       if(Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+
+            if(touch.phase == TouchPhase.Moved)
+            {
+                deltaX = touch.deltaPosition.x;
+                deltaY = touch.deltaPosition.y;
+                newXPos = Mathf.Clamp(transform.position.x + (deltaX * Time.deltaTime * touchSpeedModifier), xMin, xMax);
+                newYPos = Mathf.Clamp(transform.position.y + (deltaY * Time.deltaTime * touchSpeedModifier), yMin, yMax);
+                transform.position = new Vector2(newXPos, newYPos);
+            }
+        }
     }
     private void SetupMoveBoundaries()
     {
