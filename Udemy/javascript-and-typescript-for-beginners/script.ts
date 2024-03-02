@@ -11,10 +11,30 @@ aStringOrNumber = 4;
 console.log(aStringOrNumber);
 
 aStringOrNumber = "name";
-
 let gift: undefined | number | Float64Array;
 gift = 0.001 + 1;
+
 console.log(gift);
 
 console.log(bNumber);
 console.log(aStringOrNumber);
+
+function testVarLet(checkvar) {
+  if (checkvar) {
+    var x = "abc",
+      y = 123;
+    console.log(x);
+    console.log(y);
+  } else {
+    const scoped = 1;
+    let xlet = 123;
+    let ylet = "abc";
+    console.log(xlet);
+    console.log(scoped);
+  }
+  //console.log(ylet);
+  // console.log(scoped);
+}
+
+testVarLet(true);
+testVarLet(false);
