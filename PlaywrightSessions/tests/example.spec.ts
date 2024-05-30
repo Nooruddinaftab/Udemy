@@ -15,7 +15,8 @@ test("test asdasd Name",
 
   }
 );
-test("test 223 Name",
+test.describe("my Main test suit", ()=>{
+  test("test 223 Name",
   {
     tag: ["@smoke", "@2344"],
     annotation: {
@@ -29,4 +30,5 @@ test("test 223 Name",
     await expect(page).toHaveTitle(/Playwright/);
 
   }
-);
+  );
+})
